@@ -1,8 +1,12 @@
 Readify | Personal Book Tracker & Explorer
 Readify is a modern, responsive Progressive Web App (PWA) designed for book lovers to track their reading progress, explore new titles, and find their "reading flow" with ambient sounds.
 
+
+
 🚀 Live Demo
 View the Live Website Here
+https://rusiru-ekanayake.github.io/Readify/ 
+
 
 
 
@@ -20,6 +24,8 @@ Responsive Design: Fully optimized for Mobile, Tablet, and Desktop views.
 PWA Ready: Installable on mobile devices with offline support via Service Workers.
 
 
+
+
 🛠️ Built With
 HTML5: Semantic structure for better SEO and accessibility.
 
@@ -28,6 +34,8 @@ CSS3: Custom layouts using Flexbox and Grid, including smooth transitions and an
 JavaScript: Dynamic content rendering, modal logic, and PWA service worker registration.
 
 Google Fonts: Clean and professional typography using "Poppins."
+
+
 
 
 🧪 Quality Assurance & Testing
@@ -40,6 +48,8 @@ Accessibility: Tested with WAVE to ensure WCAG compliance (high contrast, ARIA l
 Performance: Audited via Google Lighthouse for speed, SEO, and PWA best practices.
 
 Cross-Device Testing: Verified responsiveness across various screen breakpoints.
+
+
 
 
 📂 Project Structure
@@ -55,6 +65,8 @@ Plaintext
 ├── sw.js                    # Service Worker for Offline Use
 ├── manifest.json            # PWA Metadata
 └── assets/                  # Images and Logos
+
+
 
 👨‍💻 Author
 Rusiru Ekanayake 
