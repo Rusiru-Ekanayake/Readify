@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Readify | Reading Flow</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="Logo.png">
+    <link rel="apple-touch-icon" href="Logo.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2c3e50">
+</head>
+<body>
+    <header>
+       <nav class="navbar">
+           <div class="logo-container">
+        <img src="Logo.png" alt="Logo" class="nav-logo-img">
+        <div class="logo">Readify</div>
+    </div>
+            <ul class="nav-menu">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="book-explorer.html">Book Explorer</a></li>
+                <li><a href="progress-tracker.html">Progress Tracker</a></li>
+                <li><a href="random-book-recommender.html">Random Book Recommender</a></li>
+                <li><a href="flow.html">Reading Flow</a></li>
+                <li><a href="feedback-page.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Reading Flow</h1>
+        
+        <section class="sound-machine">
+            <h2>Ambience</h2>
+            <div class="sound-controls">
+                <button id="rain-btn" class="flow-btn" onclick="toggleSound('rain')">Rain 🌧️</button>
+                <button id="fire-btn" class="flow-btn" onclick="toggleSound('fire')">Fireplace 🔥</button>
+            </div>
+            <audio id="rain-audio" loop src="liecio-calming-rain-257596.mp3"></audio>
+            <audio id="fire-audio" loop src="soundreality-blazing-fire-394355.mp3"></audio>
+        </section>
+
+        <hr>
+
+        <section class="completed-books">
+            <h2>Books You've Finished</h2>
+            <ul id="finished-list" class="finished-list">
+                </ul>
+        </section>
+    </main>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+      <br>
+     <br>
+    <br>
+    <br>
+    <br>
+   
+<footer class="sleek-footer">
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="Home.html">Home</a>
+            <a href="book-explorer.html">Book Explorer</a>
+            <a href="progress-tracker.html">Progress Tracker</a>
+            <a href="random-book-recommender.html">Random Book Recommender</a>
+            <a href="flow.html">Reading Flow</a>
+            <a href="feedback-page.html">Feedback</a>
+        </div>
+
+    <div class="footer-copyright">
+        &copy; 2026 Readify Platform. Rusiru Ekanayake CB016312.
+    </div>
+    </div>
+</footer>
+
+    <script src="book-(library-data).js"></script>
+    <script src="flow-logic.js"></script>
+</body>
+</html>

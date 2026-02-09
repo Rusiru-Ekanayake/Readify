@@ -1,0 +1,21 @@
+{
+  "name": "Readify Book Platform",
+  "short_name": "Readify",
+  "description": "Track your reading and explore new adventures.",
+  "start_url": "Home.html",
+  "display": "standalone",
+  "background_color": "#2c3e50",
+  "theme_color": "#2c3e50",
+  "icons": [
+    {
+      "src": "Logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "Logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,589 @@
+/* ========================================
+1. GLOBAL STYLES & VARIABLES
+========================================
+*/
+
+html {
+    scroll-behavior: smooth; /* Smooth Scrolling Requirement */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+}
+
+/* RESPONSIVE DESIGN - Media Queries (Requirement 4) */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; /* You could implement a hamburger menu here */
+    }
+    .modal-content {
+        width: 90%;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+    .book-grid {
+        grid-template-columns: 1fr; /* Single column on phones */
+    }
+    .filter-controls {
+        flex-direction: column;
+    }
+}
+:root {
+    --primary: #2c3e50;    /* Deep Professional Blue */
+    --accent: #ffab00;     /* Gold/Amber Logo & Interaction Color */
+    --bg-mint: #e0f2f1;    /* Mint Background from Home Hero */
+    --glass: rgba(255, 255, 255, 0.85);
+    --shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7f6;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* ========================================
+2. NAVIGATION & LOGO ANIMATION (Shared)
+======================================== */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Small, sleek height for the blue bar */
+    height: 100px; 
+    padding: 0 5%; 
+    background: #2c3e50; /* Your dark blue */
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    position: relative;
+    /* Glow effect for both */
+    animation: glow-pulse 2.5s infinite ease-in-out; 
+}
+
+/* LARGER LOGO that "hangs" slightly out of the bar */
+.nav-logo-img {
+    width: 200px;  /* Very large logo */
+    height: auto;
+    object-fit: contain;
+    /* Moves the logo slightly down to pop out of the small bar */
+    transform: translateY(10px); 
+    filter: drop-shadow(0 0 8px rgba(255, 171, 0, 0.5));
+}
+
+.logo {
+    font-size: 2.2rem; 
+    font-weight: 800;
+    color: #ffab00; /* Your yellow accent */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Updated Glow Pulse */
+@keyframes glow-pulse {
+    0% { 
+        filter: drop-shadow(0 0 2px #ffab00);
+    }
+    50% { 
+        transform: scale(1.05) translateY(10px); 
+        filter: drop-shadow(0 0 25px rgba(255, 171, 0, 0.9));
+    }
+    100% { 
+        filter: drop-shadow(0 0 2px #ffab00);
+    }
+}
+
+/* Sleek Nav Links */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #ffab00;
+}
+
+/*=====================/* footer links /*===========================/*/
+.sleek-footer {
+    background-color: #2c3e50; /* Match your header blue */
+    color: white;
+    padding: 20px 4% 40px 4%; /* Extra bottom padding for copyright */
+    width: 100%;
+    box-sizing: border-box;
+    position: relative; /* Needed to anchor the copyright */
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Pushes links left, newsletter right */
+    align-items: center;
+    max-width: 100%;
+}
+
+/* Links Styling */
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #ffab00; /* Gold */
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+/* Newsletter Section (Moved Right) */
+.footer-newsletter {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-newsletter span {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.footer-newsletter form {
+    display: flex;
+    gap: 8px;
+}
+
+.footer-newsletter input {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    width: 180px;
+}
+
+.footer-newsletter button {
+    background-color: #ffab00;
+    color: #2c3e50;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.footer-newsletter button:hover {
+    background-color: #e69a00;
+}
+
+/* Copyright Section (Bottom Left) */
+.footer-copyright {
+    position: absolute;
+    bottom: 8px;
+    left: 4%;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* ========================================
+3. HOME PAGE SPECIFIC (index.html)
+========================================
+*/
+/* Your Requested Hero Styling + Grid Layout */
+.hero {
+    background-color: var(--bg-mint);
+    padding: 100px 5%;
+    min-height: 65vh;
+    /* Grid settings to put text left and image right */
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    align-items: center;
+    text-align: left; /* Changed from center to accommodate the left-side text requirement */
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: var(--primary);
+    animation: slideUpFade 1.2s ease-out forwards;
+    /* CRITICAL for rotation: ensures the JS fade works */
+    transition: opacity 0.5s ease-in-out; 
+}
+
+/* Your original animation preserved */
+@keyframes slideUpFade {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.hero-image {
+    width: 120%;
+    height: 120%;
+    min-height: 400px;
+    /*The back ground image code */
+    background: url('Back ground.png') center/contain no-repeat;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 50px 5%;
+    }
+    .hero-image { display: none; }
+}
+#quote-text {
+    transition: opacity 0.5s ease-in-out;
+}
+/* Container to align image and text side-by-side */
+.author-container {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 20px;
+    background-color: #fdfdfd;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* The Passport-style Image */
+.author-photo {
+    width: 150px; /* Slightly bigger than standard passport for better visibility */
+    height: 180px;
+    object-fit: cover; /* Ensures the photo doesn't stretch */
+    border: 3px solid #2c3e50;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.author-info h2 {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+/* Mobile Responsiveness: Stack them if the screen is too small */
+@media (max-width: 600px) {
+    .author-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+#quote-text {
+    transition: opacity 0.5s ease-in-out;
+}
+/* ========================================
+4. EXPLORER  (explorer.html)
+========================================
+/* 1. The Grid Layout for Books */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+    padding: 40px 0;
+}
+
+/* 2. Style the Cards */
+.book-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.book-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Keeps burgers/books from looking squished */
+    border-radius: 4px;
+}
+
+/* 3. HIDDEN MODAL (Fixes the floating 'x') */
+.modal {
+    display: none; /* This hides the 'x' and the modal box */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 999;
+}
+
+.modal-content {
+    background: white;
+    width: 60%;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+/* The Background Overlay */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7); /* Darkens the background */
+}
+
+/* The Box in the Middle */
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    width: 60%;
+    max-width: 800px;
+    border-radius: 12px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Table styling for Reviews */
+.reviews-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.reviews-table th, .reviews-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+/* ========================================
+5. TRACKER & BUTTONS (Shared Interaction)
+========================================
+*/
+.progress-container {
+    width: 100%;
+    background: #e0e0e0;
+    border-radius: 30px;
+    overflow: hidden;
+    margin: 25px 0;
+    height: 30px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #4caf50, #81c784);
+    width: 0%; 
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+button:hover {
+    background: var(--accent);
+    color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 171, 0, 0.3);
+}
+/* ========================================
+6.Random Book
+========================================
+*/
+
+/* Matching your screenshot yellow button */
+#recommendBtn {
+    background-color: #ffb100;
+    color: #000;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 177, 0, 0.4);
+    transition: transform 0.2s;
+}
+
+#recommendBtn:hover {
+    transform: scale(1.05);
+}
+
+/* The Recommendation Card */
+.recommendation-card {
+    margin-top: 30px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Animation Requirement */
+.fade-in {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.button-group button {
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
+
+/* ========================================
+7. flow page
+========================================
+*/
+.sound-controls {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.flow-btn {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px; /* Makes it a pill shape */
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.flow-btn.active {
+    background-color: #3498db; /* Blue when active */
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.6);
+    transform: scale(1.08);
+}
+
+.finished-list {
+    list-style: none;
+    padding: 20px 0;
+}
+
+.finished-list li {
+    background: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-left: 5px solid #2ecc71; /* Green success bar */
+    border-radius: 5px;
+}
+/* ========================================
+8. FORMS & ACCORDION (feedback.html)
+========================================
+/* FAQ Section Styles */
+.accordion-item {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 15px 20px;
+    background: white;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2c3e50;
+    cursor: pointer;
+    text-align: left;
+}
+
+/* Hidden State */
+.accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-out; /* Smooth slide effect */
+    background: #fdfdfd;
+}
+
+.accordion-body p {
+    padding: 15px 20px;
+    margin: 0;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Active State - Triggered by JS */
+.accordion-item.active .accordion-body {
+    max-height: 300px; /* High enough to fit content */
+    border-top: 1px solid #eee;
+}
+
+/* ========================================
+9. RESPONSIVE DESIGN (MOBILE)
+========================================
+*/
+@media (max-width: 768px) {
+    .navbar { flex-direction: column; gap: 15px; }
+    .nav-menu { gap: 15px; flex-wrap: wrap; justify-content: center; }
+    .hero h1 { font-size: 2.2rem; }
+    .book-grid { grid-template-columns: 1fr; }
+}

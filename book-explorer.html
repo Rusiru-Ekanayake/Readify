@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Readify | Book Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="Logo.png">
+    <link rel="apple-touch-icon" href="Logo.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2c3e50">
+</head>
+<body>
+    <header>
+         <nav class="navbar">
+            <div class="logo-container">
+        <img src="Logo.png" alt="Logo" class="nav-logo-img">
+        <div class="logo">Readify</div>
+    </div>
+            <ul class="nav-menu">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="book-explorer.html">Book Explorer</a></li>
+                <li><a href="progress-tracker.html">Progress Tracker</a></li>
+                <li><a href="random-book-recommender.html">Random Book Recommender</a></li>
+                <li><a href="flow.html">Reading Flow</a></li>
+                <li><a href="feedback-page.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Explore Our Collection</h1>
+        
+        <div class="filter-controls">
+            <input type="text" id="searchInput" placeholder="Search by title or author...">
+            <select id="genreFilter">
+                <option value="all">All Genres</option>
+                <option value="fiction">Fiction</option>
+                <option value="sci-fi">Sci-Fi</option>
+            </select>
+        </div>
+
+        <div id="bookGrid" class="book-grid"></div>
+
+       <div id="bookModal" class="modal">
+        <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div id="modalDetails"></div>
+        </div>
+        </div>
+    </main>
+
+<footer class="sleek-footer">
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="Home.html">Home</a>
+            <a href="book-explorer.html">Book Explorer</a>
+            <a href="progress-tracker.html">Progress Tracker</a>
+            <a href="random-book-recommender.html">Random Book Recommender</a>
+            <a href="flow.html">Reading Flow</a>
+            <a href="feedback-page.html">Feedback</a>
+        </div>
+
+    <div class="footer-copyright">
+        &copy; 2026 Readify Platform. Rusiru Ekanayake CB016312.
+    </div>
+    </div>
+</footer>
+
+    <script src="book-(library-data).js"></script>
+    <script src="explorer.js"></script>
+</body>
+</html>

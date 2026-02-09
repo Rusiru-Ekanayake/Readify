@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Readify | Progress Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="tracker.js"></script>
+    <link rel="icon" type="image/png" href="Logo.png">
+    <link rel="apple-touch-icon" href="Logo.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2c3e50">
+</head>
+<body>
+    <header>
+       <nav class="navbar">
+            <div class="logo-container">
+        <img src="Logo.png" alt="Logo" class="nav-logo-img">
+        <div class="logo">Readify</div>
+    </div>
+           <ul class="nav-menu">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="book-explorer.html">Book Explorer</a></li>
+                <li><a href="progress-tracker.html">Progress Tracker</a></li>
+                <li><a href="random-book-recommender.html">Random Book Recommender</a></li>
+                <li><a href="flow.html">Reading Flow</a></li>
+                <li><a href="feedback-page.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Reading Progress Tracker</h1>
+        <div class="tracker-form">
+            <label>Total Pages in Book:</label>
+            <input type="number" id="totalPages" placeholder="e.g. 300">
+            
+            <label>Pages Read So Far:</label>
+            <input type="number" id="pagesRead" placeholder="e.g. 150">
+            
+            <label>Daily Reading Speed (Pages/Day):</label>
+            <input type="number" id="readingSpeed" placeholder="e.g. 20">
+            
+            <button onclick="calculateProgress()">Calculate & Save</button>
+        </div>
+
+        <div id="results" class="results-area" style="display:none;">
+            <h2>Your Progress: <span id="percentText">0</span>%</h2>
+            <div class="progress-container">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+            <p id="finishTime"></p>
+        </div>
+    </main>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+      <br>
+     <br>
+    <br>
+    <br>
+    <br>
+   
+<footer class="sleek-footer">
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="Home.html">Home</a>
+            <a href="book-explorer.html">Book Explorer</a>
+            <a href="progress-tracker.html">Progress Tracker</a>
+            <a href="random-book-recommender.html">Random Book Recommender</a>
+            <a href="flow.html">Reading Flow</a>
+            <a href="feedback-page.html">Feedback</a>
+        </div>
+
+    <div class="footer-copyright">
+        &copy; 2026 Readify Platform. Rusiru Ekanayake CB016312.
+    </div>
+    </div>
+</footer>
+
+    <script src="js/tracker.js"></script>
+</body>
+</html>

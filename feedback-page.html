@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Readify | Feedback & FAQ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="Logo.png">
+    <link rel="apple-touch-icon" href="Logo.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2c3e50">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+        <img src="Logo.png" alt="Logo" class="nav-logo-img">
+        <div class="logo">Readify</div>
+    </div>
+           <ul class="nav-menu">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="book-explorer.html">Book Explorer</a></li>
+                <li><a href="progress-tracker.html">Progress Tracker</a></li>
+                <li><a href="random-book-recommender.html">Random Book Recommender</a></li>
+                <li><a href="flow.html">Reading Flow</a></li>
+                <li><a href="feedback-page.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="feedback-form-section">
+            <h1>We'd Love Your Feedback</h1>
+            <form id="feedbackForm">
+                <input type="text" id="userName" placeholder="Your Name" required>
+                <input type="email" id="userEmail" placeholder="Your Email" required>
+                <textarea id="userMessage" placeholder="Your Message" required></textarea>
+                <button type="submit">Submit Feedback</button>
+            </form>
+            <div id="formStatus"></div>
+        </section>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">How do I track my reading? <span>+</span></button>
+                    <div class="accordion-body"><p>Go to the Tracker page and enter your book details!</p></div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Can I save books for later? <span>+</span></button>
+                    <div class="accordion-body"><p>Yes, use the "Save" button on the Recommender or Explorer pages.</p></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<footer class="sleek-footer">
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="Home.html">Home</a>
+            <a href="book-explorer.html">Book Explorer</a>
+            <a href="progress-tracker.html">Progress Tracker</a>
+            <a href="random-book-recommender.html">Random Book Recommender</a>
+            <a href="flow.html">Reading Flow</a>
+            <a href="feedback-page.html">Feedback</a>
+        </div>
+
+    <div class="footer-copyright">
+        &copy; 2026 Readify Platform. Rusiru Ekanayake CB016312.
+    </div>
+    </div>
+</footer>
+
+    <script src="feedback.js"></script>
+</body>
+</html>
